@@ -27,7 +27,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 def app():
-    tx_data = pd.read_csv('data/online_retail_II.csv')
+    tx_data = pd.read_csv('/content/online_retail_II.csv')
 
     #REVENUE
     #converting the type of Invoice Date Field from string to datetime.

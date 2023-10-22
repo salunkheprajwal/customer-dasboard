@@ -481,7 +481,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.header('Churn Prediction')
 #churn prediction
-df_data = pd.read_csv('data/churn.csv')
+df_data = pd.read_csv('/content/churn.csv')
 
 df_data.loc[df_data.Churn=='No','Churn'] = 0 
 df_data.loc[df_data.Churn=='Yes','Churn'] = 1
