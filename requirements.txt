@@ -1,0 +1,7 @@
+streamlit
+matplotlib
+seaborn
+sklearn
+plotly
+chart_studio
+xgboost
