@@ -199,12 +199,12 @@ tx_user = order_cluster('RevenueCluster', 'Revenue',tx_user,True)
 # tx_user.groupby('RevenueCluster')['Revenue'].describe()
 #calculate overall score and use mean() to see details
 tx_user['OverallScore'] = tx_user['RecencyCluster'] + tx_user['FrequencyCluster'] + tx_user['RevenueCluster']
-tx_user.groupby('OverallScore')['Recency','Frequency','Revenue'].mean()
+tx_user.groupby('OverallScore')[['Recency','Frequency','Revenue']].mean()
 
 # OVERALL SCORE
 #calculate overall score and use mean() to see details
 tx_user['OverallScore'] = tx_user['RecencyCluster'] + tx_user['FrequencyCluster'] + tx_user['RevenueCluster']
-tx_user.groupby('OverallScore')['Recency','Frequency','Revenue'].mean()
+tx_user.groupby('OverallScore')[['Recency','Frequency','Revenue']].mean()
 
 tx_user['Segment'] = 'Low-Value'
 tx_user.loc[tx_user['OverallScore']>2,'Segment'] = 'Mid-Value' 
@@ -481,7 +481,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.header('Churn Prediction')
 #churn prediction
-df_data = pd.read_csv('/content/churn.csv')
+df_data = pd.read_csv('data/churn.csv')
 
 df_data.loc[df_data.Churn=='No','Churn'] = 0 
 df_data.loc[df_data.Churn=='Yes','Churn'] = 1
